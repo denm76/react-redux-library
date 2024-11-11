@@ -1,1 +1,0 @@
-# React pet project - library
