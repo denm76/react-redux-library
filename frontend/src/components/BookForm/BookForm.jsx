@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import createBookWithId from "../../utils/createBookWithId";
 import { addBook, fetchBook } from "../../redux/slices/booksSlice.js";
+import { setError } from "../../redux/slices/errorSlice.js";
 import booksData from "../../data/books.json";
 import "./BookForm.css";
 
@@ -34,10 +35,10 @@ function BookForm() {
 
       setTitle("");
       setAuthor("");
+    } else {
+      dispatch(setError("All field required!"));
     }
   };
-
-
 
   const handleAddRandomBookViaAPI = () => {
     dispatch(fetchBook());
