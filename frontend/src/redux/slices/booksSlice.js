@@ -13,7 +13,7 @@ export const fetchBook = createAsyncThunk(
       return res.data;
     } catch (error) {
       thunkAPI.dispatch(setError(error.message));
-      throw error;  
+      throw error;
     }
   }
 );
